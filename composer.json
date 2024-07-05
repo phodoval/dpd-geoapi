@@ -1,0 +1,24 @@
+{
+    "name": "phodoval/dpd-geoapi",
+    "description": "PHP SDK for DPD GeoAPI",
+    "type": "library",
+    "require": {
+        "php": ">=8.1",
+        "cuyz/valinor": "^1",
+        "guzzlehttp/guzzle": "^7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Phodoval\\DpdGeoApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "phodoval"
+        }
+    ],
+    "require-dev": {
+        "phpstan/phpstan": "^1",
+        "phpunit/phpunit": "^10"
+    }
+}
