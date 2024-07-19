@@ -10,6 +10,7 @@ use JsonException;
 use Phodoval\DpdGeoApi\Dto\PageSize;
 use Phodoval\DpdGeoApi\Dto\Parcel;
 use Phodoval\DpdGeoApi\Dto\PrintType;
+use Phodoval\DpdGeoApi\Dto\TrackingResult;
 
 class ParcelsNamespace extends AbstractNamespace {
     /**
@@ -70,13 +71,25 @@ class ParcelsNamespace extends AbstractNamespace {
 
     /**
      * @param string[] $parcelNumbers
-     * @return array
+     * @return TrackingResult[]
      * @throws GuzzleException
      * @throws JsonException
      * @throws MappingError
      */
     public function trackingBatch(array $parcelNumbers): array {
-        return $this->request('POST', '/tracking', 'Parcel[]', data: ['parcels' => $parcelNumbers]);
+        /**
+         * @var TrackingResult[]
+         */
+        return $this->request('POST', '/tracking', 'TrackingResult[]', data: ['parcels' => $parcelNumbers]);
+    }
+
+    /**
+     * @throws GuzzleException
+     * @throws MappingError
+     * @throws JsonException
+     */
+    public function tracking(string $parcelNumber): ?TrackingResult {
+        return $this->request('GET', '/tracking/'.$parcelNumber, TrackingResult::class);
     }
 
     public function getNamespace(): string {
