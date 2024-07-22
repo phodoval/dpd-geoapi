@@ -1,10 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Phodoval\DpdGeoApi\Dto;
+namespace Phodoval\DpdGeoApi\Dto\Parcels;
 
 use DateTimeImmutable;
-use DateTimeInterface;
 
 class ParcelEvent {
     public function __construct(

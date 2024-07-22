@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Phodoval\DpdGeoApi\Dto;
+namespace Phodoval\DpdGeoApi\Dto\Parcels;
+
+use Phodoval\DpdGeoApi\Dto\Person;
 
 class ParcelInfo {
     public function __construct(

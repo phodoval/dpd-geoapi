@@ -8,15 +8,15 @@ use DateTimeInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use JsonException;
 use Phodoval\DpdGeoApi\Dto\PageSize;
-use Phodoval\DpdGeoApi\Dto\Parcel;
+use Phodoval\DpdGeoApi\Dto\Parcels\Parcel;
+use Phodoval\DpdGeoApi\Dto\Parcels\TrackingResult;
 use Phodoval\DpdGeoApi\Dto\PrintType;
-use Phodoval\DpdGeoApi\Dto\TrackingResult;
 
 class Parcels extends AbstractNamespace {
     /**
      * @param DateTimeInterface $from
      * @param DateTimeInterface $to
-     * @return Parcel[]
+     * @return \Phodoval\DpdGeoApi\Dto\Parcels\Parcel[]
      * @throws GuzzleException
      * @throws MappingError|JsonException
      */
@@ -71,7 +71,7 @@ class Parcels extends AbstractNamespace {
 
     /**
      * @param string[] $parcelNumbers
-     * @return TrackingResult[]
+     * @return \Phodoval\DpdGeoApi\Dto\Parcels\TrackingResult[]
      * @throws GuzzleException
      * @throws JsonException
      * @throws MappingError

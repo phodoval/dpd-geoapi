@@ -4,9 +4,10 @@ declare(strict_types=1);
 namespace Phodoval\DpdGeoApi\Dto\Shipments;
 
 use Phodoval\DpdGeoApi\Dto\Customer;
+use Phodoval\DpdGeoApi\Dto\Parcels\Parcel;
 use Phodoval\DpdGeoApi\Dto\Payer;
-use Phodoval\DpdGeoApi\Dto\References;
 use Phodoval\DpdGeoApi\Dto\Person;
+use Phodoval\DpdGeoApi\Dto\References;
 
 class Shipment {
     public function __construct(
@@ -19,7 +20,7 @@ class Shipment {
         public Person       $declaredSender,
 
         /**
-         * @var ShipmentParcel[]
+         * @var Parcel[]
          */
         public array        $parcels,
 

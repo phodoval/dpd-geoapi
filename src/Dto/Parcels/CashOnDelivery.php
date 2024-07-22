@@ -1,7 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Phodoval\DpdGeoApi\Dto;
+namespace Phodoval\DpdGeoApi\Dto\Parcels;
+
+use Phodoval\DpdGeoApi\Dto\BankAccount;
+use Phodoval\DpdGeoApi\Dto\PaymentType;
 
 class CashOnDelivery {
     public function __construct(

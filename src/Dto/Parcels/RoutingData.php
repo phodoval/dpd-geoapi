@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Phodoval\DpdGeoApi\Dto;
+namespace Phodoval\DpdGeoApi\Dto\Parcels;
 
 class RoutingData {
     public function __construct(
