@@ -21,7 +21,8 @@ class Country {
             return null;
         }
 
-        foreach (Countries::ALL as $country) {
+        $countries = Countries::all();
+        foreach ($countries as $country) {
             if ($country['numeric'] === $this->isoNumeric) {
                 return $country['alpha2'];
             }
