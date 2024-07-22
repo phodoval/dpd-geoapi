@@ -19,7 +19,7 @@ class Client {
         private readonly array $options = [],
     ) {
         $this->transport = new GuzzleHttp\Client([
-            'base_uri' => $this->testing ? 'https://geoapi-test.dpd.cz' : 'https://geoapi.dpd.cz',
+            'base_uri' => $this->testing ? 'https://geoapi-test.dpd.cz/' : 'https://geoapi.dpd.cz/',
             'headers' => [
                 'Accept' => 'application/json',
                 'x-api-key' => $this->apiKey,
@@ -28,12 +28,20 @@ class Client {
         ] + $this->options);
     }
 
+    public function parcels(): Namespaces\Parcels {
+        return new Namespaces\Parcels($this);
+    }
+
+    public function shipments(): Namespaces\Shipments {
+        return new Namespaces\Shipments($this);
+    }
+
     /**
      * @param string                    $method
      * @param string                    $uri
      * @param array<string, mixed>|null $data
      * @param array<string, mixed>|null $query
-     * @return array<string, mixed>|string
+     * @return array<array<string, mixed>>|array<string, mixed>|string
      * @throws GuzzleException|JsonException
      */
     public function request(string $method, string $uri, array $data = null, array $query = null): array|string {

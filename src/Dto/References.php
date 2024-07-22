@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Phodoval\DpdGeoApi\Dto;
 
-class ParcelReferences {
+class References {
     public function __construct(
         public string $ref1,
         public ?string $ref2 = null,

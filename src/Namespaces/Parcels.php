@@ -12,7 +12,7 @@ use Phodoval\DpdGeoApi\Dto\Parcel;
 use Phodoval\DpdGeoApi\Dto\PrintType;
 use Phodoval\DpdGeoApi\Dto\TrackingResult;
 
-class ParcelsNamespace extends AbstractNamespace {
+class Parcels extends AbstractNamespace {
     /**
      * @param DateTimeInterface $from
      * @param DateTimeInterface $to
