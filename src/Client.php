@@ -53,6 +53,8 @@ class Client {
             $options['json'] = $data;
         }
 
+        $uri = 'v1/' . $uri;
+
         $response = $this->transport->request($method, $uri, $options);
         if ($response->getBody()->getSize() === 0) {
             return [];
